@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7fea)agzt#$+opj(@%htikxso#%(b-6os8n56a9uw*o9&yjm75'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.112']
+ALLOWED_HOSTS = ['onionx9.pythonanywhere.com']
 
 
 # Application definition
