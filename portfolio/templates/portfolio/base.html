@@ -22,6 +22,7 @@
 <body>
 
   <nav id="topNav" class="navbar navbar-expand-md navbar-light">
+     <!-- <nav id="topNav" class="navbar navbar-expand-md navbar-light"> -->
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static "portfolio/Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo">
@@ -42,7 +43,24 @@
             <a class="nav-link" href="https://github.com/shivam675" target="_blank">Github</a>
           </li>
           <li>
-            <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
+            <a role="button"  href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
+          </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
+                    <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                        {% csrf_token %}
+                        <button id="signOutBtn" type="submit">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
+                </li>
+                <li >
+                    <a role="button" href="{% url 'loginuser' %}" class="btn btn-primary">Login</a>
+                </li>
+            {% endif %}
           </li>
         </ul>
       </div>
