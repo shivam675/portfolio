@@ -1,0 +1,28 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">Python challenge files are below 😊</h1>
+    <br>
+    <br>
+    <a href="{% static "gsoc/python_challenge.py" %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="python_challenge.py">Download python challenge</a>
+    <h1>           </h1>
+    <a href="{% static "gsoc/config.json" %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="python_challenge.py" download="config.json">Download config</a>
+    <!--<a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>-->
+
+
+    <br>
+    <br>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

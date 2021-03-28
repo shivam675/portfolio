@@ -41,3 +41,11 @@ def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
+
+
+def gsoc2021(request):
+    return render(request, 'portfolio/gsoc_python_challenge.html')
+
+
+def roboticsAcademychallenge(request):
+    return render(request, 'portfolio/roboticsAcademychallenge.html')

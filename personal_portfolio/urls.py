@@ -26,6 +26,8 @@ urlpatterns = [
     path('signupuser', views.signupuser, name='signupuser'),
     path('loginuser', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
+    path('gsoc2021/python-challenge/', views.gsoc2021, name = 'gsoc_python'),
+    path('gsoc2021/roboticsAcademychallenge', views.roboticsAcademychallenge, name='gsoc_acad')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

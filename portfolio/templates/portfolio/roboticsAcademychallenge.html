@@ -1,0 +1,34 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">Robotics Academy Images 😊</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 style="text-align:left;">Follow line docker</h3>
+    <br>
+    <img src="{% static "gsoc/connected.png" %}" alt="Follow line docker" style="width:1000px;height:600px;">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 style="text-align:left;">Gazebo on loaclhost docker</h3>
+    <br>
+    <img src="{% static "gsoc/gazebo.png" %}" alt="Gazebo on loaclhost docker" style="width:1000px;height:600px;">
+    <br>
+    <br>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}
