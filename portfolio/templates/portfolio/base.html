@@ -23,7 +23,7 @@
 
   <nav id="topNav" class="navbar navbar-expand-md navbar-light">
      <!-- <nav id="topNav" class="navbar navbar-expand-md navbar-light"> -->
-    <div class="container">
+    <!-- <div class="container"> -->
       <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static "portfolio/Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo">
         <span>Shivam Chavan</span>
@@ -64,11 +64,13 @@
           </li>
         </ul>
       </div>
-    </div>
+    <!-- </div> -->
   </nav>
-  <div class="container">
-    {% block content %}{% endblock %}
-  </div>
+  <div class="row justify-content-center mt-10">
+    <div class="col-md-10">
+      {% block content %}{% endblock %}
+    </div>
+</div>    
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
