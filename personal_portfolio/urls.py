@@ -22,7 +22,7 @@ from portfolio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('blog/', include('blog.urls')),
+    path('blog/', include('blog.urls'), name='blogs'),
     path('signupuser', views.signupuser, name='signupuser'),
     path('loginuser', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),

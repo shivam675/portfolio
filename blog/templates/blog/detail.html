@@ -48,4 +48,72 @@
 
   {{ blog.description|safe }}
 
+
+  <br>
+  <br>
+  <br>
+  <div class="main-comment-section">
+    {{comments.count}} Comment{{comments|pluralize}}
+  </div>
+  <br>
+  <br>
+
+
+<div class="container">
+  <div class="row">
+    {% for comment in comments %}
+              <div class="col-sm-4 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <img src="{% static "blog/comment.png" %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ comment.created_at|truncatechars:12}}</h5>
+                      <p class="card-text">{{ comment.content}}</p>
+                    </div>
+                    <div class="card-body">
+                      <a role="button" href="#" class="btn btn-outline-danger">{{comment.user|capfirst}}</a>
+                      <!-- <a href="#" class="card-link"></a> -->
+                    </div>
+                  </div>
+              </div>
+          {% endfor %}
+
+
+
+<br>
+<br>
+<br>
+
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+{% if user.is_authenticated %}
+
+<form method="POST">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="content">Comment</label>
+      {{comment_form.as_p}}
+    </div>
+    <input type="submit" name="comment" class="btn btn-warning">
+</form>    
+
+ 
+{% else %}
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">You need to login to comment</h1>
+  </div>
+</div>
+
+{% endif %}
+
+
+
+    
 {% endblock %}
