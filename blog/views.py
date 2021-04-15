@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect
 from .models import Blog, PostImage, Comment
 from .forms import CommentForm
 
@@ -14,7 +15,7 @@ def detail(request, blog_id):
             content = request.POST.get('content')
             comment = Comment.objects.create(post = blog, user = request.user, content = content)
             comment.save()
-            return redirect('home')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         cf = CommentForm()
         blog = get_object_or_404(Blog, pk=blog_id)
