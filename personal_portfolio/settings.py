@@ -25,7 +25,7 @@ SECRET_KEY = '7fea)agzt#$+opj(@%htikxso#%(b-6os8n56a9uw*o9&yjm75'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['onionx9.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['onionx9.pythonanywhere.com', 'melodic.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = ( os.path.join('static'),
                     #  os.path.join('portfolio/static'),)
 # STATIC_ROOT = ''
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
