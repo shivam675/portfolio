@@ -161,18 +161,21 @@
                                 <br>
                                     <div class="post-comment-title">
                                         <h3>Post your comment</h3>
-                                <form id="contact-form" class="single-form comment-form wow fadeIn" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                                <form method="POST" class="single-form comment-form wow fadeIn" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                                  {% csrf_token %}
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <input name="name" class="contact-name form-control" id="contact-name" type="text" placeholder="nick-name" required="">
+                                            <input name="user_name" class="contact-name form-control" id="user_name" type="text" placeholder="nick-name" required="">
+
+
                                         </div>
 
                                         <div class="col-sm-12">
-                                            <input name="name" class="contact-subject form-control" id="contact-email" type="email" placeholder="Your Email" required="">
+                                            <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required="">
                                         </div>
 
                                         <div class="col-sm-12">
-                                            <textarea class="contact-message" id="message" rows="6" placeholder="comment here!" required></textarea>
+                                            <textarea name="content" class="contact-message" id="content" rows="4" placeholder="comment here!" required=""></textarea>
                                         </div>
 
                                         <!-- Subject Button -->

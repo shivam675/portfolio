@@ -29,8 +29,8 @@ urlpatterns = [
     path('gsoc2021/python-challenge/', views.gsoc2021, name = 'gsoc_python'),
     path('gsoc2021/roboticsAcademychallenge', views.roboticsAcademychallenge, name='gsoc_acad'),
     path('base/', views.base, name='base'),
-    path('major_projects/', views.major_projects, name='major_projects'),
-    path('contact/', views.contact, name='contact')
+    path('major-projects/', views.major_projects, name='major_projects'),
+    path('contact-me/', views.contact_me, name='contact')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

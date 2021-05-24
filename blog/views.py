@@ -13,9 +13,14 @@ def detail(request, blog_id):
         if cf.is_valid():
             blog = get_object_or_404(Blog, pk=blog_id)
             content = request.POST.get('content')
-            comment = Comment.objects.create(post = blog, user = request.user, content = content)
+            user = request.POST.get('user_name')
+            email = request.POST.get('email')
+            comment = Comment.objects.create(post = blog, user_name = user, email = email, content = content)
             comment.save()
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+        else:
+            return render('blog/all_blogs.html', {'blogs':blogs}) 
     else:
         cf = CommentForm()
         blog = get_object_or_404(Blog, pk=blog_id)

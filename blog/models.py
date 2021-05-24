@@ -32,5 +32,6 @@ class Tag(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Blog, default=None, on_delete = models.CASCADE, related_name ='comments')
     user_name = models.CharField(max_length=20, default='anon')
+    email = models.EmailField(max_length = 254)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

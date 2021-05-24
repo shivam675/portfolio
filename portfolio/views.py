@@ -3,13 +3,13 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from .models import Project
+from .models import Project, contact
+from .forms import ContactForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    projects = Project.objects.all()
-    return render(request, 'updated/home_page.html', {'projects':projects})
+    return render(request, 'updated/home_page.html',)
 
 def signupuser(request):
     if request.method == 'GET':
@@ -52,12 +52,28 @@ def roboticsAcademychallenge(request):
     return render(request, 'portfolio/roboticsAcademychallenge.html')
 
 
-def contact(request):
-    return render(request, 'updated/contact.html')
+def contact_me(request):
+    if request.method == 'POST':
+        conf = ContactForm(request.POST or None)
+        if conf.is_valid():
+            f_name = request.POST.get('first_name')
+            l_name = request.POST.get('last_name')
+            email = request.POST.get('email_adress')
+            content = request.POST.get('message')
+            obj = contact.objects.create(first_name = f_name, last_name = l_name, email_adress = email, message = content)
+            obj.save()
+            return render(request,'updated/contact.html', { 'success' :'Form submitted successfully !!' })
+
+        else:
+            return render(request, 'updated/contact.html')
+    else:
+        conf = ContactForm()
+        return render(request, 'updated/contact.html', {'comment_form':conf})
 
 
 def base(request):
     return render(request, 'updated/base.html')
 
 def major_projects(request):
-    return render(request, 'updated/projects.html')
+    projects = Project.objects.all()
+    return render(request, 'updated/projects.html',  {'projects':projects})

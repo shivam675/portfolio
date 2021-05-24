@@ -49,20 +49,26 @@
         </div>
 
         <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-          <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+          {% if success %}
+
+        <h5 class="text-success">{{ success }}</h5>
+
+          {% endif %}
+          <form method="POST" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+            {% csrf_token %}
               <div id="msgSubmit" class="h3 text-center hidden"></div>
               <div class="row">
                   <div class="col-md-6 col-sm-12">
-                      <input name="name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                      <input name="first_name" class="contact-name form-control" id="first_name" type="text" placeholder="First Name" required>
                   </div>
                   <div class="col-md-6 col-sm-12">
-                      <input name="name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                      <input name="last_name" class="contact-email form-control" id="last_name" type="text" placeholder="Last Name" required>
                   </div>
                   <div class="col-sm-12">
-                      <input name="name" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                      <input name="email_adress" class="contact-subject form-control" id="email_adress" type="email" placeholder="Your Email" required>
                   </div>
                   <div class="col-sm-12">
-                      <textarea class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                      <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
                   </div>
                   <!-- Subject Button -->
                   <div class="btn-form col-sm-12">
@@ -72,9 +78,10 @@
           </form>
           </div>
           <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-            <br>
           <div class="mh-map">
-              <!-- <div id="mh-map" class="shadow-1"></div> -->
+              <div id="" class="shadow-1">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1336.5679815074318!2d73.74454671748532!3d18.646705779319568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ba02df574b81%3A0xd6a012a13eace3a5!2sBhondve%20Orchids!5e0!3m2!1sen!2sin!4v1621867342698!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
           </div>
           </div>
 
