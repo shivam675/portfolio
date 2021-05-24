@@ -30,7 +30,8 @@ urlpatterns = [
     path('gsoc2021/roboticsAcademychallenge', views.roboticsAcademychallenge, name='gsoc_acad'),
     path('base/', views.base, name='base'),
     path('major-projects/', views.major_projects, name='major_projects'),
-    path('contact-me/', views.contact_me, name='contact')
+    path('contact-me/', views.contact_me, name='contact'),
+    path('my-certifications', views.certification, name='certification'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

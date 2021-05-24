@@ -32,6 +32,14 @@ class contact(models.Model):
 class Certificate(models.Model):
     """docstring for Certificates."""
     certificate_title = models.CharField(max_length=100)
+
+    type = [
+    ('user-interface', 'Robotics'),
+    ('branding', 'Web',),
+    ('mockup','IOT',),
+    ('ui','AI',),
+    ]
+    catc = models.CharField(max_length=20, choices=type, default='ui')
     image = models.ImageField(upload_to='portfolio/images/',  blank=True)
     pdf = models.FileField(upload_to='portfolio/pdf')
 

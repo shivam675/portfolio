@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from .models import Project, contact
+from .models import Project, contact, Certificate
 from blog.models import Blog
 from .forms import ContactForm
 from django.utils import timezone
@@ -79,3 +79,9 @@ def base(request):
 def major_projects(request):
     projects = Project.objects.all()
     return render(request, 'updated/projects.html',  {'projects':projects})
+
+
+def certification(request):
+    Certificates = Certificate.objects.all()
+    # print(Certificates)
+    return render(request, 'updated/certifications.html',  {'Certificates':Certificates})
