@@ -150,5 +150,46 @@
     <script src="{% static 'assets/js/map-init.js' %}"></script>
     <script src="{% static 'assets/js/custom-scripts.js' %}"></script>
 
+
+
+
+    <link rel="stylesheet" href="{% static 'demo/demo.css' %}">
+    <script type="text/javascript" src="{% static 'demo/styleswitcher.js' %}"></script>
+    <script type="text/javascript" src="{% static 'demo/demo.js' %}"></script>
+        <div class="demo-style-switch" id="switch-style">
+    <a id="toggle-switcher" class="switch-button"><i class="fa fa-snowflake-o "></i></a>
+    <div class="switched-options">
+    <div class="config-title">
+        Colors :
+    </div>
+    <ul class="styles">
+        <li><a href="#" onclick="setActiveStyleSheet('blue'); return false;" title="Blue">
+            <div class="blue"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('purple'); return false;" title="Purple">
+            <div class="purple"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('blue-munsell'); return false;" title="Blue Munsell">
+            <div class="blue-munsell"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('orange'); return false;" title="Orange">
+            <div class="orange"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('slate'); return false;" title="Slate">
+            <div class="slate"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('green'); return false;" title="Green">
+            <div class="green"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('yellow'); return false;" title="Yellow">
+            <div class="yellow"></div></a>
+        </li>
+        <li><a href="#" onclick="setActiveStyleSheet('red'); return false;" title="Red">
+            <div class="red"></div></a>
+        </li>
+    </ul>
+    </div>
+    </div>
+
 </body>
 </html>

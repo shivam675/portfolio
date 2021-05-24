@@ -72,7 +72,7 @@
                                     <li><span>xacro</span></li>
                                 </ul>
                             </div>
-                            <a href="" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Downlaod CV <i class="fa fa-download"></i></a>
+                            <a href="{% static 'portfolio/resume.pdf' %}" target="_blank" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"> Resume <i class="fa fa-download"></i></a>
                         </div>
                     </div>
                 </div>
@@ -344,55 +344,25 @@
                     <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                         <h3>Featured Blogs</h3>
                     </div>
-                    <div class="col-sm-12 col-md-4">
-                         <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <img src="{% static 'assets/images/b-3.png' %}" alt="" class="img-fluid">
-                            <div class="blog-inner">
-                                <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
-                                <div class="mh-blog-post-info">
-                                    <ul>
-                                        <li><strong>Post On</strong><a href="">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="">ThemeSpiders</a></li>
-                                    </ul>
-                                </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">
-                            <div class="blog-inner">
-                                <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
-                                <div class="mh-blog-post-info">
-                                    <ul>
-                                        <li><strong>Post On</strong><a href="">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="">ThemeSpiders</a></li>
-                                    </ul>
-                                </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">
+                    {% for blog in blogs %}
+                  <div class="col-sm-12 col-md-4">
+                         <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="{{ blog.image.url }}" alt="" class="img-fluid">
                             <div class="blog-inner">
-                                <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
+                                <h2><a href="{% url 'blog:detail' blog.id %}">{{blog.title}}</a></h2>
                                 <div class="mh-blog-post-info">
                                     <ul>
-                                        <li><strong>Post On</strong><a href="">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                        <li><strong>Post On</strong><a href="">{{ blog.date|date:'M d Y'|upper }}</a></li>
+                                        <li><strong>By</strong><a href="">{{ blog.user }}</a></li>
                                     </ul>
                                 </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
+                                <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+                                <a href="{% url 'blog:detail' blog.id %}">Read More</a>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -412,7 +382,7 @@
         ===================
         -->
         {% block footer %}
-                        
+
                         <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                           <!-- <h4>@R.O.S.</h4> -->
                         </div>

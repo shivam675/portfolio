@@ -25,3 +25,15 @@ class contact(models.Model):
     last_name = models.CharField(max_length=100)
     email_adress = models.EmailField(max_length = 254)
     message = models.TextField()
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name
+
+
+class Certificate(models.Model):
+    """docstring for Certificates."""
+    certificate_title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='portfolio/images/',  blank=True)
+    pdf = models.FileField(upload_to='portfolio/pdf')
+
+    def __str__(self):
+        return self.certificate_title

@@ -4,12 +4,14 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .models import Project, contact
+from blog.models import Blog
 from .forms import ContactForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    return render(request, 'updated/home_page.html',)
+    blogs = Blog.objects.order_by("-date")[:3]
+    return render(request, 'updated/home_page.html', {'blogs':blogs})
 
 def signupuser(request):
     if request.method == 'GET':

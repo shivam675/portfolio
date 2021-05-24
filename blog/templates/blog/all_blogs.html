@@ -18,7 +18,7 @@
             {% for blog in blogs %}
             <div class="col-sm-12 col-md-4">
                  <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <img src="{{ blog.image }}" alt="" class="img-fluid">
+                    <img src="{{ blog.image.url }}" alt="" class="img-fluid">
                     <div class="blog-inner">
                         <h2><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h2>
                         <div class="mh-blog-post-info">
