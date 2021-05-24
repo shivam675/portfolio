@@ -9,7 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     projects = Project.objects.all()
-    return render(request, 'portfolio/home.html', {'projects':projects})
+    return render(request, 'updated/home_page.html', {'projects':projects})
+
 def signupuser(request):
     if request.method == 'GET':
         return render(request, 'portfolio/signupuser.html', {'form':UserCreationForm()})
@@ -49,3 +50,14 @@ def gsoc2021(request):
 
 def roboticsAcademychallenge(request):
     return render(request, 'portfolio/roboticsAcademychallenge.html')
+
+
+def contact(request):
+    return render(request, 'updated/contact.html')
+
+
+def base(request):
+    return render(request, 'updated/base.html')
+
+def major_projects(request):
+    return render(request, 'updated/projects.html')

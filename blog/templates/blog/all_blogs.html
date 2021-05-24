@@ -1,23 +1,40 @@
-{% extends "portfolio/base.html" %}
+{% extends "updated/base.html" %}
 
 {% load static %}
 
 {% block content %}
 
-<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
 
-<h3 class="text-center mb-5">Shivam has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
 
-{% for blog in blogs %}
-<div class="row justify-content-center my-3">
-  <div class="col-md-10">
-    <a href="{% url 'blog:detail' blog.id %}">
-      <h2>{{ blog.title }}</h2>
-    </a>
-    <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
-    <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
-  </div>
-</div>
-{% endfor %}
+
+<section class="mh-blog" id="mh-blog">
+    <div class="container">
+        <div class="row section-separator">
+            <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+              <br>
+                <h3>All Blogs</h3>
+                <h4 class="text-center">Shivam has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h4>
+            </div>
+            {% for blog in blogs %}
+            <div class="col-sm-12 col-md-4">
+                 <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                    <img src="{{ blog.image }}" alt="" class="img-fluid">
+                    <div class="blog-inner">
+                        <h2><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h2>
+                        <div class="mh-blog-post-info">
+                            <ul>
+                                <li><strong>Post On</strong><a href="">{{ blog.date|date:'M d Y'|upper }}</a></li>
+                                <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                            </ul>
+                        </div>
+                        <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+                        <a href="{% url 'blog:detail' blog.id %}">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
 
 {% endblock %}

@@ -1,0 +1,442 @@
+{% extends 'updated/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <section class="mh-home" id="mh-home">
+            <div class="home-ovimg">
+                <div class="container">
+                    <div class="row xs-column-reverse section-separator vertical-middle-content home-padding">
+                        <div class="col-sm-6">
+                            <div class="mh-header-info">
+                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                                    <span>Hello I'm</span>
+                                </div>
+
+                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Shivam Chavan</h2>
+                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Robotics Developer</h4>
+
+                                <ul>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a href="mailto:">shivam31199@email.com</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a href="callto:">+91 7040590595</a></li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-map-marker"></i><address>Ravet BRT road, Ravet, Pune, Maharashtra, India</address></li>
+                                </ul>
+
+                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <div class="img-border">
+                                    <img src="{% static 'assets/images/hero.png' %}" alt=""  class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        ==================
+            ABOUT
+        =================
+        -->
+        <section class="mh-about" id="mh-about">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                            <img src="{% static 'assets/images/ab-img.png' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-about-inner">
+                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Hello, I’m a Shivam, Robotics developer and a web-developer based in India.
+                            I have rich experience in robotics & website building
+                            and customization. Also I am good at</p>
+                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <ul>
+                                    <li><span>Python</span></li>
+                                    <li><span>R.O.S.</span></li>
+                                    <li><span>Django</span></li>
+                                    <li><span>Gazebo</span></li>
+                                    <li><span>Linux</span></li>
+                                    <li><span>xacro</span></li>
+                                </ul>
+                            </div>
+                            <a href="" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Downlaod CV <i class="fa fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        ===================
+           SERVICE
+        ===================
+        -->
+        <section class="mh-service">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>What I do</h3>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="fa fa-bullseye purple-color"></i>
+                            <h3>Robotics Dev-Op</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                magna aliquam erat volutpat.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <i class="fa fa-code iron-color"></i>
+                            <h3>Web Development</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                magna aliquam erat volutpat.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                            <i class="fa fa-object-ungroup sky-color"></i>
+                            <h3>test - block</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                magna aliquam erat volutpat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        ===================
+           SKILLS
+        ===================
+        -->
+        <section class="mh-skills" id="mh-skills">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="section-title text-center col-sm-12">
+                        <!--<h2>Skills</h2>-->
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-skills-inner">
+                            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <h3>Technical Skills</h3>
+                                <div class="each-skills">
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">R.O.S. Basics</div>
+                                                <div class="percentagem-num">70%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Differential Drive Navigation</div>
+                                                <div class="percentagem-num">60%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 46%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Open Chain Manipulation</div>
+                                                <div class="percentagem-num">80%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Perception</div>
+                                                <div class="percentagem-num">40%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="candidatos">
+                                        <div class="parcial">
+                                            <div class="info">
+                                                <div class="nome">Python</div>
+                                                <div class="percentagem-num">50%</div>
+                                            </div>
+                                            <div class="progressBar">
+                                                <div class="percentagem" style="width: 50%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <h3>Professional Skills</h3>
+                            <ul class="mh-professional-progress" >
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="80"></div>
+                                    <div class="pr-skill-name">Communication</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="60"></div>
+                                    <div class="pr-skill-name">Team Work</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="50"></div>
+                                    <div class="pr-skill-name">Project Management</div>
+                                </li>
+                                <li>
+                                    <div class="mh-progress mh-progress-circle" data-progress="60"></div>
+                                    <div class="pr-skill-name">Creativity</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        ===================
+           EXPERIENCES
+        ===================
+        -->
+        <section class="mh-experince" id="mh-experience">
+            <div class="bolor-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-education">
+                                 <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
+                                <div class="mh-education-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                        <h4>Industrial Engineering From <a href="">Vishwakarma Institiute of Technology</a></h4>
+                                        <div class="mh-eduyear">2018-2022</div>
+                                        <p>Learning Industrial Engineering from VIT Pune was quite nice experience.
+                                         But my passion keeps me bound to Robotics. I have been learining ROS since
+                                         Jan 2020. Got a good grip on it now!
+                                         <br> Pune, Maharashtra.
+                                       </p>
+                                    </div>
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                        <h4>Junior College 12th From <a href="">Pratibha JR College</a></h4>
+                                        <div class="mh-eduyear">2017-2018</div>
+                                        <p>Did my 12th in Science stream with 72.3 %
+                                          <br> PCMC Pune, Maharashtra
+
+                                        </p>
+                                    </div>
+                                    <!-- Education Institutes-->
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <h4>Junior College 11th From <a href="">Shri Malhsakant College</a></h4>
+                                        <div class="mh-eduyear">2016-2017</div>
+                                        <p> Completed my 11th
+                                          <br> PCMC Pune, Maharashtra
+                                        </p>
+                                    </div>
+                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <h4> School From<a href=""> S.P.M. English medium school </a></h4>
+                                        <div class="mh-eduyear">2016-2017</div>
+                                        <p> Completed my 11th
+                                          <br> Nigdi, Pune, Maharashtra
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="mh-work">
+                                 <h3>Internships</h3>
+                                <div class="mh-experience-deatils">
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                        <h4>Robotics Developer Intern @ <a href="">Octobotics Tech.</a></h4>
+                                        <div class="mh-eduyear">April 2021 - June 2021</div>
+                                        <span>Responsibility :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Build 7-dof Arm ros packages</li>
+                                            <li><i class="fa fa-circle"></i>Simulation and Validation</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                        <h4> Electronics Intern @ <a href="">Fly Master [Micro Aviation]</a></h4>
+                                        <div class="mh-eduyear">Feb 2021 - March 2021</div>
+                                        <span>Responsibility :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i> Electronic Box Assembly </li>
+                                            <li><i class="fa fa-circle"></i> Static Aircraft Building </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Education Institutes-->
+                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                        <h4>Mechanical From @<a href="">Athira Industry</a></h4>
+                                        <div class="mh-eduyear">2019</div>
+                                        <span>Responsibility :</span>
+                                        <ul class="work-responsibility">
+                                            <li><i class="fa fa-circle"></i>Lathe Machine work</li>
+                                            <li><i class="fa fa-circle"></i>Learning DIE Castng housing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        ===================
+           PORTFOLIO
+        ===================
+        -->
+
+        <!--
+        ===================
+           PRICING
+        ===================
+        -->
+
+        <!--
+        ===================
+           BLOG
+        ===================
+        -->
+        <section class="mh-blog" id="mh-blog">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Featured Blogs</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                         <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="{% static 'assets/images/b-3.png' %}" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                            <img src="{% static 'assets/images/b-2.png' %}" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="">24.11.19</a></li>
+                                        <li><strong>By</strong><a href="">ThemeSpiders</a></li>
+                                    </ul>
+                                </div>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
+                                <a href="blog-single.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+        ===================
+           TESTIMONIALS
+        ===================
+        -->
+
+
+                {% endblock %}
+
+        <!--
+        ===================
+           FOOTER 1
+        ===================
+        -->
+        {% block footer %}
+                        
+                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                          <!-- <h4>@R.O.S.</h4> -->
+                        </div>
+                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                        </div>
+                        <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="text-left text-xs-center">
+                                        <p>@me_be_shiva</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="social-icon">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-github"></i></a></li>
+                                        <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+
+
+</body>
+</html>

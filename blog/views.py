@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
-from .models import Blog, PostImage, Comment
+from .models import Blog, PostImage, Comment, Tag
 from .forms import CommentForm
 
 def all_blogs(request):
@@ -21,4 +21,5 @@ def detail(request, blog_id):
         blog = get_object_or_404(Blog, pk=blog_id)
         photos = PostImage.objects.filter(post=blog_id)
         comment = Comment.objects.filter(post=blog_id)
-        return render(request, 'blog/detail.html',{'blog':blog, 'photos':photos, 'comments':comment ,'comment_form':cf})
+        tag = Tag.objects.filter(post=blog_id)
+        return render(request, 'updated/detail_blog.html',{'blog':blog, 'photos':photos, 'comments':comment ,'comment_form':cf, 'tag': tag})

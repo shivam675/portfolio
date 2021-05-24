@@ -1,0 +1,199 @@
+{% extends 'updated/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+
+
+<section class="mh-home image-bg home-2-img" id="mh-home">
+            <div class="img-foverlay img-color-overlay">
+                <div class="container">
+                    <div class="row section-separator">
+                        <div class="mh-page-title text-center col-sm-12">
+                            <h2>{{ blog.title }}</h2>
+                            <p>{{ blog.two_line_des }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mh-blog">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="mh-blog-item dark-bg blog-single">
+                                    <!-- <img src="{% static 'assets/images/home-bg-img.jpg' %}" alt="" class="img-fluid"> -->
+                                    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+                                        <!--Indicators-->
+                                        <ol class="carousel-indicators">
+                                        {% for p in photos %}
+                                          <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
+                                        {% endfor %}
+                                        </ol>
+                                        <!--/.Indicators-->
+                                        <!--Slides-->
+                                        <div class="carousel-inner" role="listbox">
+                                          {% for p in photos %}
+                                          <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                                            <img class="d-block w-100" src="{{p.images.url}}"
+                                              alt="First slide">
+                                          </div>
+                                          {% endfor %}
+                                          <!--/First slide-->
+                                        <!--/.Slides-->
+                                        <!--Controls-->
+                                        <br>
+                                        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                        <!--/.Controls-->
+                                      </div>
+                                      </div>
+
+                                    <div class="blog-inner">
+                                        <h2><a href="">{{ blog.title }}</a></h2>
+                                        <div class="mh-blog-post-info">
+                                            <ul>
+                                                <li><strong>Post On</strong><a href="">{{ blog.date|date:'F jS Y' }}</a></li>
+                                                <li><strong>By</strong><a href="">root</a></li>
+                                            </ul>
+                                        </div>
+                                        <p>
+
+                                          {{ blog.description|safe }}
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comments-->
+                            <div class="col-sm-12">
+                                <div class="comments col-sm-12">
+                                  <h3>{{comments.count}} Comment{{comments|pluralize}}</h3>
+
+                                  {% for comment in comments %}
+
+                                    <div class="single-comment media">
+                                        <img src="{% static 'assets/images/b-author.jpg' %}" alt="" class="img-fluid round-image">
+                                        <div class="col-md-10 col-sm-10 comment-details media-body">
+                                            <h4>{{ comment.user_name}}</h4>
+                                            <span>{{ comment.created_at|truncatechars:20}}</span>
+                                            <p>{{ comment.content}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                  {% endfor %}
+
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- SIDEBAR -->
+                    <div class="col-md-4">
+                        <div class="mh-blog-sidebar">
+                            <div class="sidebar-item mh-author-info">
+                                <div class="mh-author-img">
+                                    <div class="img-border">
+                                        <img src="{% static 'assets/images/b-author.jpg' %}" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <h2>Shivam Chavan</h2>
+                                <h4>Robotics Developer</h4>
+                                <p>
+                                    {{ blog.thought }}
+                                </p>
+                                <ul class="social-icon">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="sidebar-item mh-blog-category">
+                                <h3>Category</h3>
+                                <ul>
+                                    <li><a href="">{{ blog.tags }}</a></li>
+                                    <li><a href="">Techonology</a></li>
+                                    <li><a href="">Photography</a></li>
+                                </ul>
+                            </div>
+                            <div class="sidebar-item mh-blog-category">
+                                <h3>Techonology</h3>
+                                <ul>
+                                  <li><a href="">R.O.S.</a></li>
+                                    {% for i in tag %}
+                                    <li><a href="">{{ i.t }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="sidebar-item mh-blog-insta">
+                                <h3>Media</h3>
+                                <ul>
+                                  {% for p in photos %}
+                                    <li>
+                                        <a href="{{ p.images.url }}" target="_blank">
+                                            <img src="{{ p.images.url }}" alt="" class="img-fluid">
+                                        </a>
+                                    </li>
+                                  {% endfor %}
+
+                                </ul>
+
+                                <br>
+                                <br>
+                                    <div class="post-comment-title">
+                                        <h3>Post your comment</h3>
+                                <form id="contact-form" class="single-form comment-form wow fadeIn" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <input name="name" class="contact-name form-control" id="contact-name" type="text" placeholder="nick-name" required="">
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <input name="name" class="contact-subject form-control" id="contact-email" type="email" placeholder="Your Email" required="">
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <textarea class="contact-message" id="message" rows="6" placeholder="comment here!" required></textarea>
+                                        </div>
+
+                                        <!-- Subject Button -->
+                                        <div class="btn-form col-sm-12">
+                                            <button class="btn btn-fill" type="submit"> Post Comment </button>
+                                        </div>
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+{% endblock %}
