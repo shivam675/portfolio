@@ -354,7 +354,7 @@ function getStyle( elem ) {
   if ( !style ) {
     logError( 'Style returned ' + style +
       '. Are you running this code in a hidden iframe on Firefox? ' +
-      'See http://bit.ly/getsizebug1' );
+      'See http://google.com' );
   }
   return style;
 }
@@ -3512,4 +3512,3 @@ var trim = String.prototype.trim ?
   return Isotope;
 
 }));
-
