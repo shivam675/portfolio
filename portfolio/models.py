@@ -11,6 +11,7 @@ class Project(models.Model):
     ('branding', 'Web',),
     ('mockup','Microcontroller',),
     ('ui','Photograpy',),
+    ('mis', 'Miscellaneous')
     ]
     cat = models.CharField(max_length=20, choices=type, default='ui')
 
@@ -38,6 +39,7 @@ class Certificate(models.Model):
     ('branding', 'Web',),
     ('mockup','IOT',),
     ('ui','AI',),
+    ('mis', 'Miscellaneous')
     ]
     catc = models.CharField(max_length=20, choices=type, default='ui')
     image = models.ImageField(upload_to='portfolio/images/',  blank=True)
