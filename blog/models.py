@@ -35,3 +35,6 @@ class Comment(models.Model):
     email = models.EmailField(max_length = 254)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user_name
