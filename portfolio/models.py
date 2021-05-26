@@ -1,4 +1,5 @@
 from django.db import models
+from blog.models import *
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
@@ -14,11 +15,16 @@ class Project(models.Model):
     ('mis', 'Miscellaneous')
     ]
     cat = models.CharField(max_length=20, choices=type, default='ui')
-
+    post = models.ForeignKey(Blog, null=True, default=None, on_delete = models.CASCADE, related_name ='project_blog')
 
 
     def __str__(self):
         return self.title
+
+
+# class projectBlog(models.Model):
+
+
 
 
 class contact(models.Model):

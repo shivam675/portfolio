@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+# from portfolio.models import Project
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
@@ -14,7 +15,8 @@ class Blog(models.Model):
     ('microcontroller','microcontroller'),
     ]
     tags = models.CharField(max_length=20, choices=type, default='automation')
-    # user_name = models.ForeignKey(User, default=None, on_delete = models.CASCADE)
+    # Project_name = models.ForeignKey(, default=None, on_delete = models.CASCADE)
+
     def __str__(self):
         return self.title
 
@@ -24,6 +26,15 @@ class PostImage(models.Model):
 
     def __str__(self):
         return self.post.title
+
+class Video(models.Model):
+    post = models.ForeignKey(Blog , default=None, on_delete=models.CASCADE)
+    videofile= models.FileField(upload_to='videos', null=True,)
+    # video_info= models.CharField(max_length=500)
+    # timestamp   = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.post.title + ": " + str(self.id)
 
 class Tag(models.Model):
     post = models.ForeignKey(Blog, default=None, on_delete=models.CASCADE)

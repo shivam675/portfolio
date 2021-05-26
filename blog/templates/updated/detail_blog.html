@@ -47,6 +47,19 @@
                                               alt="First slide">
                                           </div>
                                           {% endfor %}
+
+                                          {%for video in videos %}
+
+                                          <div class="carousel-item">
+                                            <video class="img-fluid" autoplay loop muted>
+                                              <source src="{{ video.videofile.url }}" type="video/mp4" />
+                                            </video>
+                                            <div class="carousel-caption d-none d-md-block">
+                                              <h5>{{ video.video_info }}</h5>
+                                            </div>
+                                          </div>
+
+                                          {% endfor %}
                                           <!--/First slide-->
                                         <!--/.Slides-->
                                         <!--Controls-->
