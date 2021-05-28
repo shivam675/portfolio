@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from portfolio.models import Project
+# from portfolio.models import Certificate
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
@@ -15,8 +15,8 @@ class Blog(models.Model):
     ('microcontroller','microcontroller'),
     ]
     tags = models.CharField(max_length=20, choices=type, default='automation')
-    # Project_name = models.ForeignKey(, default=None, on_delete = models.CASCADE)
-
+    # Project_name = models.ForeignKey(Project, default=None, null=True, on_delete = models.CASCADE)
+    # Certification = models.ForeignKey(Certificate, default=None, null=True, on_delete = models.CASCADE)
     def __str__(self):
         return self.title
 
