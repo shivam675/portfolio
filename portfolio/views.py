@@ -77,11 +77,11 @@ def base(request):
     return render(request, 'updated/base.html')
 
 def major_projects(request):
-    projects = Project.objects.all()
+    projects = Project.objects.order_by('-date_of_completion')
     return render(request, 'updated/projects.html',  {'projects':projects})
 
 
 def certification(request):
-    Certificates = Certificate.objects.all()
+    Certificates = Certificate.objects.order_by('-date_of_completion')
     # print(Certificates)
     return render(request, 'updated/certifications.html',  {'Certificates':Certificates})

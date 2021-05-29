@@ -17,6 +17,8 @@ class Project(models.Model):
     cat = models.CharField(max_length=20, choices=type, default='ui')
     post = models.ForeignKey(Blog, null=True, default=None, on_delete = models.CASCADE, related_name ='project_blog')
 
+    date_of_completion = models.DateField()
+    # status = models.CharField(max_length=20, choices=type, default='ui')
 
     def __str__(self):
         return self.title
@@ -50,6 +52,8 @@ class Certificate(models.Model):
     catc = models.CharField(max_length=20, choices=type, default='ui')
     image = models.ImageField(upload_to='portfolio/images/',  blank=True)
     pdf = models.FileField(upload_to='portfolio/pdf')
+    date_of_completion = models.DateField()
+
 
     def __str__(self):
         return self.certificate_title
