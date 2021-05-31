@@ -47,7 +47,8 @@ class Certificate(models.Model):
     ('branding', 'Web',),
     ('mockup','IOT',),
     ('ui','AI',),
-    ('mis', 'Miscellaneous')
+    ('mis', 'Miscellaneous'),
+    ('par', 'Participation'),
     ]
     catc = models.CharField(max_length=20, choices=type, default='ui')
     image = models.ImageField(upload_to='portfolio/images/',  blank=True)
