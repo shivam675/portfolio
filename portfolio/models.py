@@ -50,6 +50,19 @@ class Certificate(models.Model):
     ('mis', 'Miscellaneous'),
     ('par', 'Participation'),
     ]
+
+    pn_list = [
+    (1,1),
+    (2,2),
+    (3,3),
+    (4,4),
+    (5,5),
+    (6,6),
+    (7,7),
+    ]
+
+
+    priority_number = models.IntegerField(choices=pn_list)
     catc = models.CharField(max_length=20, choices=type, default='ui')
     image = models.ImageField(upload_to='portfolio/images/',  blank=True)
     pdf = models.FileField(upload_to='portfolio/pdf')

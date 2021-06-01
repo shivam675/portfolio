@@ -82,6 +82,6 @@ def major_projects(request):
 
 
 def certification(request):
-    Certificates = Certificate.objects.order_by('-date_of_completion')
+    Certificates = Certificate.objects.order_by('-priority_number')
     # print(Certificates)
     return render(request, 'updated/certifications.html',  {'Certificates':Certificates})
